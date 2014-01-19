@@ -1,0 +1,29 @@
+﻿@using KMPRazorMix
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300' rel='stylesheet' type='text/css' />
+    <link href="/content/style.css" rel="stylesheet" type="text/css" />
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <section id="header">
+        <h1>
+            <a href="/">Kerbal MP</a>
+        </h1>
+        <h2>
+            <a href="/Downloads">Download</a>
+        </h2>
+        <h2>
+            <a href="/Servers">Servers</a>
+        </h2>
+    </section>
+    <section id="content">
+        @RenderBody()
+    </section>
+    <section id="footer">
+        Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm"), Information is @{Write(KMP.CurrentlyUpdating ? "not" : ""); } currently updating.
+    </section>
+</body>
+</html>

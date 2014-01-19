@@ -1,0 +1,22 @@
+﻿@using KMPRazorMix
+@{
+    Page.Title = "Download";
+    Layout = "~/_Layout.cshtml";
+}
+
+<p>
+    KMP release builds can be downloaded from spaceport. 
+</p>
+<ul id="downloads">
+    <li>KMP <a href="@KMP.ClientDownload">Client</a> Version @KMP.KMPVersion for KSP @KMP.KSPCompatibleVersion
+    </li>
+
+    <li>KMP <a href="@KMP.ServerDownload">Server</a> Version @KMP.KMPVersion
+    </li>
+</ul>
+<p>
+    Older downloads can be found [here?]
+</p>
+<div id="changelog">
+    @{ WriteLiteral(KMP.Changelog); }
+</div>
