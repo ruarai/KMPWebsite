@@ -1,0 +1,43 @@
+﻿@using KMPRazorMix
+@{
+    Page.Title = "Title";
+    Layout = "~/_Layout.cshtml";
+}
+
+<p>This is a list of community servers. If you've got a stable server that you plan to continuing running, ask around on the #KMP irc channel on esper.net</p>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Address</td>
+        <td>Players</td>
+        <td>Version</td>
+    </tr>
+    @{
+        foreach (var s in KMP.Servers.Where(s => s.IsOnline))
+        {
+            if (s.Version == KMP.KMPVersion)
+            {
+                string output = "<tr>";
+                output += string.Format("<td>{0}</td>", s.Information);
+                output += string.Format("<td>{0}</td>", s.Address);
+                output += string.Format("<td>{0}/{1}</td>", s.Players, s.MaxPlayers);
+                output += string.Format("<td>{0}</td>", s.Version);
+                output += string.Format("<td><a href=\"ServerDetails.aspx?server={0}\">Info</a></td>", s.Address);
+                output += "</tr>";
+                WriteLiteral(output);
+            }
+            else
+            {
+                string output = "<tr id=\"outdatedServer\">";
+                output += string.Format("<td>{0}</td>", s.Information);
+                output += string.Format("<td>{0}</td>", s.Address);
+                output += string.Format("<td>{0}/{1}</td>", s.Players, s.MaxPlayers);
+                output += string.Format("<td>{0}</td>", s.Version);
+                output += string.Format("<td><a href=\"ServerDetails.aspx?server={0}\">Info</a></td>", s.Address);
+                output += "</tr>";
+                WriteLiteral(output);
+            }
+        }
+    }
+</table>

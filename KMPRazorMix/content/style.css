@@ -47,21 +47,18 @@
 
     #content a
     {
-        color: dodgerblue;
+        color: #1e90ff;
     }
 
         #content a:visited
         {
-            color: dodgerblue;
+            color: #1e90ff;
         }
 
 #changelog
 {
     padding-left: 3em;
-    border-color: black;
-    border-radius: 5px;
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid #000;
     width: 75%;
 }
 #downloads {

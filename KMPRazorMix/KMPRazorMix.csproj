@@ -85,6 +85,8 @@
     <Content Include="Index.cshtml" />
     <Content Include="Downloads.cshtml" />
     <Content Include="backend\Updater.ashx" />
+    <Content Include="blank_template\Template.cshtml" />
+    <Content Include="Servers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
