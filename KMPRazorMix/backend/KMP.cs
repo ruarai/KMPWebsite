@@ -12,7 +12,7 @@ namespace KMPRazorMix
     {
         private const string DataSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpinfo";
         private const string ChangelogSource = "http://raw.github.com/ruarai/kmpinfo/master/changelog";
-        private const string ReadmeSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpreadme.md";
+        private const string ReadmeSource = "http://raw.github.com/TehGimp/KerbalMultiPlayer/master/README.md";
         private const string ServersSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpservers";
 
         public static string KMPVersion;
