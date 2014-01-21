@@ -73,6 +73,7 @@
       <DependentUpon>style.less</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="content\favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="MarkdownSharp.dll" />
     <Content Include="Web.config" />
@@ -99,6 +100,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FAQ.cshtml" />
+    <Content Include="Server.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

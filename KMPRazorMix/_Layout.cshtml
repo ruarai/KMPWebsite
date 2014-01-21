@@ -4,6 +4,7 @@
 <head>
     <link href='http://fonts.googleapis.com/css?family=Exo+2:400,300' rel='stylesheet' type='text/css' />
     <link href="/content/style.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="/content/favicon.ico">
     <title>@Page.Title</title>
     @RenderSection("head", required: false)
 </head>
@@ -29,7 +30,7 @@
         @RenderBody()
     </section>
     <section id="footer">
-        Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm"), Information is @{Write(KMP.CurrentlyUpdating ? "not" : ""); } currently updating.
+        Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm"), Information is @{Write(KMP.CurrentlyUpdating ? "" : "not "); }currently updating.
     </section>
 </body>
 </html>

@@ -35,11 +35,10 @@ namespace KMPRazorMix
         public static Thread updateThread;
         public static void StartUpdate()
         {
-            if (updateThread == null || !updateThread.IsAlive)
-            {
-                updateThread = new Thread(Update);
-                updateThread.Start();
-            }
+            if (updateThread != null)
+                updateThread.Abort();
+            updateThread = new Thread(Update);
+            updateThread.Start();
         }
 
         private static void Update()

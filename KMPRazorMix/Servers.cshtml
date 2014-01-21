@@ -6,7 +6,7 @@
 
 <p>This is a list of community servers. If you've got a stable server that you plan to continuing running, ask around on the #KMP irc channel on esper.net</p>
 
-<table>
+<table id="servers">
     <tr>
         <td>Name</td>
         <td>Address</td>
@@ -23,7 +23,7 @@
                 output += string.Format("<td>{0}</td>", s.Address);
                 output += string.Format("<td>{0}/{1}</td>", s.Players, s.MaxPlayers);
                 output += string.Format("<td>{0}</td>", s.Version);
-                output += string.Format("<td><a href=\"ServerDetails.aspx?server={0}\">Info</a></td>", s.Address);
+                output += string.Format("<td><a href=\"Server?server={0}\">Info</a></td>", s.Address);
                 output += "</tr>";
                 WriteLiteral(output);
             }
@@ -34,7 +34,7 @@
                 output += string.Format("<td>{0}</td>", s.Address);
                 output += string.Format("<td>{0}/{1}</td>", s.Players, s.MaxPlayers);
                 output += string.Format("<td>{0}</td>", s.Version);
-                output += string.Format("<td><a href=\"ServerDetails.aspx?server={0}\">Info</a></td>", s.Address);
+                output += string.Format("<td><a href=\"Server?server={0}\">Info</a></td>", s.Address);
                 output += "</tr>";
                 WriteLiteral(output);
             }

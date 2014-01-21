@@ -1,0 +1,46 @@
+﻿@using KMPRazorMix
+@{
+    Page.Title = "Server";
+    Layout = "~/_Layout.cshtml";
+}
+
+@{
+    if (Request.QueryString["server"] == null || !KMP.Servers.Exists(s => s.Address == Request.QueryString["server"]))
+    {
+        //If no query string or server doesn't exist, redirect.
+        Response.Redirect("/");
+    }
+    var server = KMP.Servers.FirstOrDefault(s => s.Address == Request.QueryString["server"]);
+    
+}
+<h1>@server.Information</h1>
+
+<table>
+    <tr><td>Name</td><td>Value</td></tr>
+    @{
+        if (server.IsOnline)
+        {
+            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>","Address",server.Address));
+
+            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Version", server.Version));
+
+            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Players", server.Players + "/" + server.MaxPlayers));
+
+            if (server.Players > 0)
+            {
+                WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Players", string.Join(", ", server.PlayerNames.Where(s => !string.IsNullOrWhiteSpace(s) ) ) ) );//wow many parentheses
+            }
+            
+            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Whitelisting", server.Whitelisted));
+
+            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "HTTP Port", server.HTTPPort));
+
+        }
+        else
+        {
+            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Address", server.Address));
+            
+            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Failed with", server.FailedWith));
+        }
+    }
+</table>
