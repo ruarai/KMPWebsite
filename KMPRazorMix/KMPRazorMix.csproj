@@ -67,7 +67,6 @@
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\internal.sdf" />
     <Content Include="content\style.css">
       <DependentUpon>style.less</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
