@@ -1,4 +1,5 @@
-﻿@{
+﻿@using WebMatrix.Data
+@{
     Page.Title = "Error";
     Layout = "~/_Layout.cshtml";
 }
@@ -9,22 +10,26 @@
         switch (Request.QueryString["err"])
         {
             case "404":
-                    <p>The page you were looking for could not be found.</p>
+    <p>The page you were looking for could not be found.</p>
                 break;
             case "403":
             case "401":
-                    <p>You didn't have sufficient authorization to view that page.</p>
+    <p>You didn't have sufficient authorization to view that page.</p>
                 break;
             case "500":
-                    <p>An internal server error occured.</p>
+    <p>An internal server error occured.</p>
                 break;
             default:
-                    <p>But no more information could be found.</p>
+    <p>But no more information could be found.</p>
                 break;
         }
+
+        var db = Database.Open("internal");
+
+        db.Execute("UPDATE errors SET @0 = @0 + 1", "err" + Request.QueryString["err"]);
     }
     else
     {
-        <p>But no more information could be found.</p>
+    <p>But no more information could be found.</p>
     }
 }
