@@ -1,0 +1,30 @@
+﻿@{
+    Page.Title = "Error";
+    Layout = "~/_Layout.cshtml";
+}
+<h1>An error has occurred.</h1>
+@{
+    if (Request.QueryString["err"] != null)
+    {
+        switch (Request.QueryString["err"])
+        {
+            case "404":
+                    <p>The page you were looking for could not be found.</p>
+                break;
+            case "403":
+            case "401":
+                    <p>You didn't have sufficient authorization to view that page.</p>
+                break;
+            case "500":
+                    <p>An internal server error occured.</p>
+                break;
+            default:
+                    <p>But no more information could be found.</p>
+                break;
+        }
+    }
+    else
+    {
+        <p>But no more information could be found.</p>
+    }
+}

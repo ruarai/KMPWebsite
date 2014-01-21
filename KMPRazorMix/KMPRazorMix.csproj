@@ -101,6 +101,7 @@
     </Content>
     <Content Include="FAQ.cshtml" />
     <Content Include="Server.cshtml" />
+    <Content Include="Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
