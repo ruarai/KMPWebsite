@@ -41,6 +41,12 @@ namespace KMPRazorMix
             updateThread.Start();
         }
 
+        public static Timer updateTimer;
+        public static void StartServerTimer()
+        {
+            updateTimer = new Timer(RefreshServers,null,1000*60*5,1000*60*5);
+        }
+
         private static void Update()
         {
             CurrentlyUpdating = true;
@@ -80,6 +86,19 @@ namespace KMPRazorMix
             Servers = Servers.OrderBy(s => s.Players).Reverse().ToList();
             CurrentlyUpdating = false;
             updateThread.Abort();
+        }
+
+        public static void RefreshServers(object state)
+        {
+            foreach (var server in Servers)
+            {
+                try
+                {
+                    server.UpdateServer();
+                }
+                catch { Debug.WriteLine("Failed to refresh server."); }
+
+            }
         }
     }
 }
