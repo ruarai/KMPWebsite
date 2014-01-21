@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net;
+using System.Threading;
 using MarkdownSharp;
 using System.Collections.Generic;
 
@@ -28,7 +30,18 @@ namespace KMPRazorMix
         public static DateTime LastUpdate;
         public static bool CurrentlyUpdating = false;
 
-        public static void Update()
+
+        public static Thread updateThread;
+        public static void StartUpdate()
+        {
+            if (updateThread == null || !updateThread.IsAlive)
+            {
+                updateThread = new Thread(Update);
+                updateThread.Start();
+            }
+        }
+
+        private static void Update()
         {
             CurrentlyUpdating = true;
             LastUpdate = DateTime.Now;
@@ -61,10 +74,11 @@ namespace KMPRazorMix
                     serverK.UpdateServer();
                     Servers.Add(serverK);
                 }
-                catch { }
+                catch { Debug.WriteLine("Failed to add/update server.");}
 
             }
             CurrentlyUpdating = false;
+            updateThread.Abort();
         }
     }
 }

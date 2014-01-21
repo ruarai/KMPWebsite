@@ -1,0 +1,77 @@
+﻿@{
+    Page.Title = "FAQ";
+    Layout = "~/_Layout.cshtml";
+}
+
+<ul id="qaList">
+
+        <li>So I can race my friends to the Mun?</li>
+        <li>Yes!</li>
+
+        <li>Build space stations together?</li>
+        <li>Totally!</li>
+
+        <li>High-five during an EVA in orbit?</li>
+        <li>Highly recommended!</li>
+
+        <li>Build an outpost on Duna?</li>
+        <li>Most definitely.</li>
+
+        <li>Deorbit satellites with kinetic kill vehicles?</li>
+        <li>I don't know why you'd want to, but yeah you can do that too...</li>
+
+        <li>Have a drag-race on Eve?</li>
+        <li>That one can be a little janky, but yeah you can!</li>
+
+        <li>Trick my friend who's actually good at this game into doing all the hard stuff for me?</li>
+        <li>I suppose...</li>
+
+        <li>Build, fly, dream... together?</li>
+        <li>That's a good way to put it--I should make that into a slogan or something.</li>
+
+        <li>And I can use warp as much as I want, anytime I want?</li>
+        <li>Yep--normal "on rails" warp is always available, though "physics warp" isn't.</li>
+
+        <li>But... how?</li>
+        <li>The big problem that immediately comes up when allowing players to use warp whenever they want to is that forcing everyone to go into warp is unpractical, and otherwise your local copy of the solar system wouldn't be synchronized with other players (so the planets and moons would be in very different positions relative to each other for different players). KMP gets around this by allowing players to play in multiple timeframes (or "subspaces") simultaneously. You can sync with any player that's "in the future" relative to you whenever it's convenient.</li>
+
+        <li>That sounds complicated. Is it complicated?</li>
+        <li>For gameplay purposes, at least, it's actually really simple! Need to go to warp for a few years to position that shiny new Jool probe? Go ahead! Want to build a new space station with your buddy afterward? Just sync up and you're good to go. That's it.</li>
+
+        <li>What happens when I'm not in sync with someone else?</li>
+        <li>You'll still be able to see those players and what they're doing in-game--you can chat, send screenshots, share designs, etc, but you won't be able to interact with any in-game vessels that those players control. Vessels from the past or future turn translucent so that you know that you won't be able to affect them. If the other player is in the past, KMP tries to predict where they'll be in the future and shows their ship at that location. Keep in mind, though, that since the ship is still being manipulated in the past, the predicted future location can rapidly change. If another ship has been manipulated in the future, you're effectively just watching a recording of events that have "already happened" play out.</li>
+
+        <li>Won't everyone just be out of sync all the time?</li>
+        <li>It depends on what people on a particular server are doing, but yes it's totally possible that everyone on a server might split into their own subspace, and that's A-OK! When you first connect to the game you're always placed in the "latest" subspace currently on the server, and if you ever want to directly interact with another player the most you'll have to do is click a button. Vessels that aren't under active control by another player and that haven't been touched in the "future" (relative to you) are all available.</li>
+
+        <li>What happens when I disconnect? Will my vessels disappear?</li>
+        <li>No! Your vessels are saved to the server's "universe" and will continue to be simulated whenever at least one player is connected to the server. Be sure to leave your ship in a stable orbit, or it may not be there when you come back! Your vessels cannot be controlled by other players unless you "unlock" them for public access, but keep in mind that other players can still crash into your vessels physically while you're absent.</li>
+
+        <li>Can anyone just hop into my ship when I'm offline!?</li>
+        <li>No! Your vessels are marked as "private" by default, which prevents other players from taking control of them or from docking with them. If you want to allow another player to dock with one of your vessels or to be able to take control of your vessel, just set your vessel to "public" status. Keep in mind, though, that whoever is in control of a vessel can set it as "private" to claim it for themselves!! Only mark ships "public" with players you trust.</li>
+
+        <li>Is KMP massively multiplayer? Can I look forward to a solar system teeming with hundreds of players?</li>
+        <li>No. KMP is solely intended to be used with relatively small servers hosting just a few players. The bandwidth and performance requirements that come with having more than a handful of other players are too high for most computers.</li>
+
+        <li>How can I find a server?</li>
+        <li>There's no server browser for now, though this may be an option eventually. For the moment the only way to find a server is to ask around (or start your own). If you don't know anyone who is willing to run a server, good places to ask around are Reddit and the KSP Forum.</li>
+
+        <li>How do I set up my own server?</li>
+        <li>See the README.txt file included with the KMP server download.</li>
+
+        <li>How performance-intensive is KMP? Will my machine that already barely runs KSP be able to keep up?</li>
+        <li>While KMP does all it can to lessen the load, including doing as much work as possible outside the main KSP thread in order to take advantage of multicore processors, the demands of receiving physics information from other players and keeping your local game in sync are significant. You can expect a substantial FPS drop and even severe physics lag in some circumstances while playing KMP. If your machine struggles to run KSP, KMP probably won't work well for you.</li>
+
+        <li>How does KMP work? I thought multiplayer was impossible!</li>
+        <li>It's... complicated. If you have a specific development-oriented question and have watched this video, then please feel free to ask me questions about KMP's innards on Reddit (/u/TehGimp666) or Twitter (&#64;TehGimp). In a nutshell, KMP relies on your local game to do most of the heavy-lifting when it comes to simulating the universe, and updates information like a vessel's position & velocity based on what is happening in other players' games using a variety of situation-dependent methods.</li>
+
+        <li>Why can't I launch a vessel that includes mod parts? Is there any way around this?</li>
+        <li>Vessels that include non-stock parts are prevented from launching because any other players that don't have those mod parts installed wouldn't be able to see your vessel (on top of other potential errors)!</li>
+
+        <li>Is the server "universe" simulated when there are no players connected?</li>
+        <li>No! A future update may make this an optional feature, but in this release the universe is "paused" whenever all players are disconnected.</li>
+        
+        <li>My question isn't listed here! What can I do?</li>
+        <li>Have a go at joining the #KMP irc channel on irc.esper.net, someone should be able to help you there.</li>
+
+    </ul>

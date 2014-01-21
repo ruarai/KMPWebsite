@@ -10,7 +10,7 @@ namespace KMPRazorMix
 
         public void ProcessRequest(HttpContext context)
         {
-            KMP.Update();
+            KMP.StartUpdate();
             context.Response.StatusCode = 404;
         }
 

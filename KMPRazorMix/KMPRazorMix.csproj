@@ -65,7 +65,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\style.css" />
+    <Content Include="content\style.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
+    <Content Include="content\style.min.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="MarkdownSharp.dll" />
     <Content Include="Web.config" />
@@ -87,6 +92,9 @@
     <Content Include="backend\Updater.ashx" />
     <Content Include="blank_template\Template.cshtml" />
     <Content Include="Servers.cshtml" />
+    <Content Include="Readme.cshtml" />
+    <Content Include="content\style.less" />
+    <Content Include="FAQ.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
