@@ -9,28 +9,30 @@
     @RenderSection("head", required: false)
 </head>
 <body>
-    <section id="header">
-        <h1>
-            <a href="/">Kerbal MP</a>
-        </h1>
-        <h2>
-            <a href="/Downloads">Download</a>
-        </h2>
-        <h2>
-            <a href="/Servers">Servers</a>
-        </h2>
-        <h2>
-            <a href="/Readme">Readme</a>
-        </h2>
-        <h2>
-            <a href="/FAQ">FAQ</a>
-        </h2>
-    </section>
-    <section id="content">
-        @RenderBody()
-    </section>
-    <section id="footer">
-        Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm"), Information is @{Write(KMP.CurrentlyUpdating ? "" : "not "); }currently updating.
+    <section id="centralColumn">
+        <section id="header">
+            <h1>
+                <a href="/">Kerbal MP</a>
+            </h1>
+            <h2>
+                <a href="/Downloads">Download</a>
+            </h2>
+            <h2>
+                <a href="/Servers">Servers</a>
+            </h2>
+            <h2>
+                <a href="/Readme">Readme</a>
+            </h2>
+            <h2>
+                <a href="/FAQ">FAQ</a>
+            </h2>
+        </section>
+        <section id="content">
+            @RenderBody()
+        </section>
+        <section id="footer">
+            Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm")@{Write(KMP.CurrentlyUpdating ? ", Information is currently updating." : "."); }
+        </section>
     </section>
 </body>
 </html>
