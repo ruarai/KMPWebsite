@@ -10,10 +10,10 @@ namespace KMPRazorMix
 {
     public class KMP
     {
-        private const string DataSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpinfo";
-        private const string ChangelogSource = "http://raw.github.com/ruarai/kmpinfo/master/changelog";
-        private const string ReadmeSource = "http://raw.github.com/TehGimp/KerbalMultiPlayer/master/README.md";
-        private const string ServersSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpservers";
+        public const string DataSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpinfo";
+        public const string ChangelogSource = "http://raw.github.com/ruarai/kmpinfo/master/changelog";
+        public const string ReadmeSource = "http://raw.github.com/TehGimp/KerbalMultiPlayer/master/README.md";
+        public const string ServersSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpservers";
 
         public static string KMPVersion;
         public static string KSPCompatibleVersion;
@@ -32,8 +32,8 @@ namespace KMPRazorMix
         public static bool CurrentlyUpdating = false;
 
 
-        public static Thread updateThread;
-        public static Timer updateTimer;
+        static Thread updateThread;
+        static Timer updateTimer;
         public static void StartUpdate()
         {
             updateThread.Abort();
@@ -79,7 +79,7 @@ namespace KMPRazorMix
             {
                 try
                 {
-                    var split = server.Split('$');
+                    var split = server.Split(':');
                     var serverK = new Server(split[0], int.Parse(split[1]));
                     serverK.UpdateServer();
                     Servers.Add(serverK);

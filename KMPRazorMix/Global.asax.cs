@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 
 namespace KMPRazorMix
@@ -8,6 +9,11 @@ namespace KMPRazorMix
         protected void Application_Start(object sender, EventArgs e)
         {
             KMP.InitialUpdate();
+
+            if (!Directory.Exists("serverData"))
+            {
+                Directory.CreateDirectory("serverData");
+            }
         }
 
         protected void Session_Start(object sender, EventArgs e)
