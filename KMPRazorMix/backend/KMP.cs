@@ -33,19 +33,23 @@ namespace KMPRazorMix
 
 
         public static Thread updateThread;
+        public static Timer updateTimer;
         public static void StartUpdate()
         {
-            if (updateThread != null)
-                updateThread.Abort();
+            updateThread.Abort();
             updateThread = new Thread(Update);
             updateThread.Start();
         }
 
-        public static Timer updateTimer;
-        public static void StartServerTimer()
+        public static void InitialUpdate()
         {
-            updateTimer = new Timer(RefreshServers,null,1000*60*5,1000*60*5);
+            updateThread = new Thread(Update);
+            updateThread.Start();
+
+            updateTimer = new Timer(RefreshServers, null, 0, 1000 * 5 * 60);
         }
+
+
 
         private static void Update()
         {

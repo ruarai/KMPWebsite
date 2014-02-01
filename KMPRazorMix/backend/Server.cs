@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Linq;
+using System.Web;
 
 namespace KMPRazorMix
 {
@@ -59,7 +60,7 @@ namespace KMPRazorMix
                 var retriever = new WebClient();
                 var infoPage = retriever.DownloadString("http://" + IP + ":" + HTTPPort).Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
 
-                Version = infoPage[0].Replace("Version: ", "");
+                Version = HttpUtility.HtmlEncode(infoPage[0].Replace("Version: ", ""));
 
                 Port = int.Parse(infoPage[1].Replace("Port: ", ""));
 
@@ -70,10 +71,13 @@ namespace KMPRazorMix
                 PlayerNames.Clear();
                 var playerNames = infoPage[3].Replace("Players: ", "").Split(',');
                 foreach (var playerName in playerNames)
-                {PlayerNames.Add(playerName.Trim());}
+                {
+                    PlayerNames.Add(HttpUtility.HtmlEncode(playerName.Trim()));
+                }
+
                 PlayerNames = PlayerNames.Distinct().ToList();
 
-                Information = infoPage[4].Replace("Information: ", "");
+                Information = HttpUtility.HtmlEncode(infoPage[4].Replace("Information: ", ""));
 
                 UpdatesPerSecond = int.Parse(infoPage[5].Replace("Updates per Second: ", ""));
 

@@ -7,7 +7,7 @@ namespace KMPRazorMix
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            KMP.StartUpdate();
+            KMP.InitialUpdate();
         }
 
         protected void Session_Start(object sender, EventArgs e)
