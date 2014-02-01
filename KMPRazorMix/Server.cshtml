@@ -1,16 +1,14 @@
 ﻿@using KMPRazorMix
 @{
-    Page.Title = "Server";
     Layout = "~/_Layout.cshtml";
-}
-
-@{
     if (Request.QueryString["server"] == null || !KMP.Servers.Exists(s => s.Address == Request.QueryString["server"]))
     {
         //If no query string or server doesn't exist, redirect.
         Response.Redirect("/");
     }
     var server = KMP.Servers.FirstOrDefault(s => s.Address == Request.QueryString["server"]);
+
+    Page.Title = server.Information;
     
 }
 <h1>@server.Information</h1>
