@@ -70,6 +70,8 @@
     <Content Include="content\jquery.tablesorter.min.js">
       <DependentUpon>jquery.tablesorter.js</DependentUpon>
     </Content>
+    <Content Include="content\kmpclient.png" />
+    <Content Include="content\kmpserver.png" />
     <Content Include="content\style.css">
       <DependentUpon>style.less</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -5,15 +5,19 @@ body
 {
     font-family: 'Exo 2', sans-serif;
     width: 70%;
-    margin:0 auto;
+    margin: 0 auto;
 }
-::-moz-selection {
-       background-color:bisque;
-       color: #000;
+
+::-moz-selection
+{
+    background-color: bisque;
+    color: #000;
 }
-::selection {
-       background-color:bisque;
-       color: #000;
+
+::selection
+{
+    background-color: bisque;
+    color: #000;
 }
 
 #header
@@ -49,7 +53,7 @@ body
     font-size: smaller;
     color: grey;
     font-style: italic;
-    padding-top:2em;
+    padding-top: 4em;
 }
 
 #content
@@ -79,32 +83,48 @@ body
 #downloads
 {
     list-style: none;
+    margin-top:2em;
+    margin-bottom:3em;
+    height:128px;
 }
+
+    #downloads li
+    {
+        float: left;
+        width: 50%;
+    }
+
+    #downloads img
+    {
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
 
 #outdatedServer
 {
     color: grey;
 }
 
-#qaList {
-    margin-top:1em;
-    padding:0;
-}
-#qaList li
+#qaList
 {
-    list-style: none;
+    margin-top: 1em;
+    padding: 0;
 }
 
-    #qaList li:nth-child(even)
+    #qaList li
     {
-        margin-bottom: 1em;
+        list-style: none;
     }
 
-    #qaList li:nth-child(odd)
-    {
-        font-weight: 600;
-        font-size: large;
-    }
+        #qaList li:nth-child(even)
+        {
+            margin-bottom: 1em;
+        }
+
+        #qaList li:nth-child(odd)
+        {
+            font-weight: 600;
+            font-size: large;
+        }
 
 #servers td
 {
@@ -116,8 +136,10 @@ body
     font-size: large;
     font-weight: 600;
 }
-#centralColumn{
-    padding:2em 1em;
-    height:auto !important;
-    margin-bottom:3em;
+
+#centralColumn
+{
+    padding: 2em 1em;
+    height: auto !important;
+    margin-bottom: 3em;
 }
