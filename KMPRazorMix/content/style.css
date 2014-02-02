@@ -54,6 +54,10 @@ body {
 #outdatedServer {
   color: grey;
 }
+#qaList {
+  margin-top: 1em;
+  padding: 0;
+}
 #qaList li {
   list-style: none;
 }
@@ -70,7 +74,6 @@ body {
 #servers thead {
   font-size: large;
   font-weight: 600;
-  cursor: pointer;
 }
 #centralColumn {
   padding: 2em 1em;

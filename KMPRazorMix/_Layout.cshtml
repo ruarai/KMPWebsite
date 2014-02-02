@@ -26,10 +26,15 @@
             <h2>
                 <a href="/FAQ">FAQ</a>
             </h2>
+            <h2>
+                <a href="http://www.github.com/TehGimp/KerbalMultiPlayer">Source</a>
+            </h2>
         </section>
+
         <section id="content">
             @RenderBody()
         </section>
+
         <section id="footer">
             Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm")@{Write(KMP.CurrentlyUpdating ? ", Information is currently updating." : "."); }
         </section>
