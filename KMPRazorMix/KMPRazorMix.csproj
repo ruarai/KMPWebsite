@@ -66,12 +66,12 @@
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\jquery.tablesorter.js" />
-    <Content Include="content\jquery.tablesorter.min.js">
-      <DependentUpon>jquery.tablesorter.js</DependentUpon>
+    <Content Include="content\kmpclient.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="content\kmpclient.png" />
-    <Content Include="content\kmpserver.png" />
+    <Content Include="content\kmpserver.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="content\style.css">
       <DependentUpon>style.less</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -109,9 +109,6 @@
     <Content Include="FAQ.cshtml" />
     <Content Include="Server.cshtml" />
     <Content Include="Error.cshtml" />
-    <Content Include="content\jquery.tablesorter.min.js.map">
-      <DependentUpon>jquery.tablesorter.js</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
