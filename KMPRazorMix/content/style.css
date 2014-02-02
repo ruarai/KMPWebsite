@@ -93,3 +93,9 @@ body {
   height: auto !important;
   margin-bottom: 3em;
 }
+.floatRight {
+  float: right;
+}
+.floatLeft {
+  float: left;
+}
