@@ -36,7 +36,7 @@
         </section>
 
         <section id="footer">
-            Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm")@{Write(KMP.CurrentlyUpdating ? ", Information is currently updating." : "."); }
+            Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm tt")@{Write(KMP.CurrentlyUpdating ? ", Information is currently updating." : "."); }
         </section>
     </section>
 </body>
