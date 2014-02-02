@@ -1,9 +1,12 @@
 ﻿
 @linkBlue: #1e90ff;
+@headingFont: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
+@contentFont: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+@shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
 body
 {
-    font-family: 'Exo 2', sans-serif;
+    font-family:@contentFont;
     width: 70%;
     margin: 0 auto;
 }
@@ -27,12 +30,14 @@ body
 
     #header h1
     {
+        font-family: @headingFont;
         font-size: xx-large;
         display: inline;
     }
 
     #header h2
     {
+        font-family: @headingFont;
         display: inline;
         padding-left: 1em;
     }
@@ -74,7 +79,7 @@ body
 #changelog
 {
     padding-left: 3em;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-radius: 1em;
     margin: 2em;
     width: 100%;
@@ -83,9 +88,9 @@ body
 #downloads
 {
     list-style: none;
-    margin-top:2em;
-    margin-bottom:3em;
-    height:128px;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    height: 128px;
 }
 
     #downloads li
@@ -96,7 +101,7 @@ body
 
     #downloads img
     {
-        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        box-shadow:@shadow;
     }
 
 #outdatedServer
@@ -122,7 +127,7 @@ body
 
         #qaList li:nth-child(odd)
         {
-            font-weight: 600;
+            font-weight: bold;
             font-size: large;
         }
 
@@ -133,6 +138,7 @@ body
 
 #servers thead
 {
+    font-family: @headingFont;
     font-size: large;
     font-weight: 600;
 }

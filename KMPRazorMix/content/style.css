@@ -1,5 +1,5 @@
 body {
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
   width: 70%;
   margin: 0 auto;
 }
@@ -15,10 +15,12 @@ body {
   display: inline;
 }
 #header h1 {
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
   font-size: xx-large;
   display: inline;
 }
 #header h2 {
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
   display: inline;
   padding-left: 1em;
 }
@@ -43,7 +45,7 @@ body {
 }
 #changelog {
   padding-left: 3em;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-radius: 1em;
   margin: 2em;
   width: 100%;
@@ -75,13 +77,14 @@ body {
   margin-bottom: 1em;
 }
 #qaList li:nth-child(odd) {
-  font-weight: 600;
+  font-weight: bold;
   font-size: large;
 }
 #servers td {
   padding-right: 4em;
 }
 #servers thead {
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
   font-size: large;
   font-weight: 600;
 }
