@@ -16,6 +16,7 @@ body {
 }
 #header h1 {
   display: inline;
+  font-size: 1.5em;
 }
 #header h2 {
   padding-left: 1em;
