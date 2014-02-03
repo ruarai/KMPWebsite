@@ -15,14 +15,11 @@ body {
   display: inline;
 }
 #header h1 {
-  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
-  font-size: xx-large;
   display: inline;
 }
 #header h2 {
-  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
-  display: inline;
   padding-left: 1em;
+  display: inline;
 }
 #header a {
   color: inherit;
@@ -92,4 +89,12 @@ body {
   padding: 2em 1em;
   height: auto !important;
   margin-bottom: 3em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
 }
