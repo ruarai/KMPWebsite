@@ -6,7 +6,13 @@
 
 <p>This is a list of community servers.
     <br />
-    If you've got a stable server that you would like to put on this list, ask around on the #KMP irc channel on esper.net or submit a patch/pull request on the <a href="https://github.com/ruarai/kmpinfo">kmpinfo repo</a>.</p>
+    If you've got a stable server that you would like to put on this list, ask around on the #KMP irc channel on esper.net or submit a patch/pull request on the <a href="https://github.com/ruarai/kmpinfo">kmpinfo repo</a>.
+
+</p>
+<p>
+    Server pings might be lower or higher depending on your location.
+</p>
+
 
 <table id="servers">
     <thead>
@@ -15,6 +21,7 @@
             <td>Address</td>
             <td>Players</td>
             <td>Version</td>
+            <td>Ping</td>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +35,7 @@
                     output += string.Format("<td>{0}</td>", s.Address);
                     output += string.Format("<td>{0}/{1}</td>", s.Players, s.MaxPlayers);
                     output += string.Format("<td>{0}</td>", s.Version);
+                    output += string.Format("<td>{0}</td>", s.Pingms);
                     output += string.Format("<td><a href=\"Server?server={0}\">Info</a></td>", s.Address);
                     output += "</tr>";
                     WriteLiteral(output);
@@ -39,6 +47,7 @@
                     output += string.Format("<td>{0}</td>", s.Address);
                     output += string.Format("<td>{0}/{1}</td>", s.Players, s.MaxPlayers);
                     output += string.Format("<td>{0}</td>", s.Version);
+                    output += string.Format("<td>{0}</td>", s.Pingms);
                     output += string.Format("<td><a href=\"Server?server={0}\">Info</a></td>", s.Address);
                     output += "</tr>";
                     WriteLiteral(output);

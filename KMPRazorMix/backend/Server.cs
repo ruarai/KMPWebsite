@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Web;
 
 namespace KMPRazorMix
 {
     public class Server
     {
-        public Server(string ip,int httpPort)
+        public Server(string ip, int httpPort)
         {
             IP = ip;
             HTTPPort = httpPort;
@@ -38,15 +39,16 @@ namespace KMPRazorMix
 
         public bool IsOnline;
         public string FailedWith;
+        public long Pingms = 2500;
 
         public string Address
         {
             get
             {
-                return string.Format("{0}:{1}",IP,Port);
+                return string.Format("{0}:{1}", IP, Port);
             }
             set
-            { 
+            {
                 var split = value.Split(':');
                 IP = split[0];
                 Port = int.Parse(split[1]);
@@ -57,6 +59,18 @@ namespace KMPRazorMix
         {
             try
             {
+                try
+                {
+                    var pinger = new Ping();
+                    var ping = pinger.Send(IP, 2500);
+
+                    Pingms = ping.RoundtripTime;
+                }
+                catch
+                {
+                    Pingms = 2500;
+                }
+
                 var retriever = new WebClient();
                 var infoPage = retriever.DownloadString("http://" + IP + ":" + HTTPPort).Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
 
@@ -91,7 +105,7 @@ namespace KMPRazorMix
 
                 IsOnline = true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 FailedWith = e.ToString();
                 IsOnline = false;

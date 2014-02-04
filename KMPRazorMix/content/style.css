@@ -79,7 +79,7 @@ body {
   font-size: large;
 }
 #servers td {
-  padding-right: 4em;
+  padding-right: 1em;
 }
 #servers thead {
   font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
