@@ -1,6 +1,5 @@
 ﻿
 @linkBlue: #1e90ff;
-@headingFont: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
 @contentFont: "Lato", "Helvetica Neue", Helvetica, sans-serif;
 @shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
@@ -101,7 +100,7 @@ body
         box-shadow: @shadow;
     }
 
-#outdatedServer
+.outdatedServer
 {
     color: grey;
 }
@@ -131,11 +130,11 @@ body
 #servers td
 {
     padding-right: 1em;
+    padding-bottom:0.15em;
 }
 
 #servers thead
 {
-    font-family: @headingFont;
     font-size: large;
     font-weight: 600;
 }
@@ -145,9 +144,4 @@ body
     padding: 2em 1em;
     height: auto !important;
     margin-bottom: 3em;
-}
-
-h1, h2, h3, h4, h5, h6
-{
-    font-family: @headingFont;
 }

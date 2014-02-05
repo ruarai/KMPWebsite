@@ -60,7 +60,7 @@ body {
 #downloads img {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
-#outdatedServer {
+.outdatedServer {
   color: grey;
 }
 #qaList {
@@ -79,9 +79,9 @@ body {
 }
 #servers td {
   padding-right: 1em;
+  padding-bottom: 0.15em;
 }
 #servers thead {
-  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
   font-size: large;
   font-weight: 600;
 }
@@ -89,12 +89,4 @@ body {
   padding: 2em 1em;
   height: auto !important;
   margin-bottom: 3em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Exo 2", "Helvetica Neue", Helvetica, sans-serif;
 }

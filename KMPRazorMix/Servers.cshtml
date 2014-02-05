@@ -4,7 +4,8 @@
     Layout = "~/_Layout.cshtml";
 }
 
-<p>This is a list of community servers.
+<p>
+    This is a list of community servers.
     <br />
     If you've got a stable server that you would like to put on this list, ask around on the #KMP irc channel on esper.net or submit a patch/pull request on the <a href="https://github.com/ruarai/kmpinfo">kmpinfo repo</a>.
 
@@ -28,30 +29,14 @@
         @{
             foreach (var s in KMP.Servers.Where(s => s.IsOnline))
             {
-                if (s.Version == KMP.KMPVersion)
-                {
-                    string output = "<tr>";
-                    output += string.Format("<td>{0}</td>", s.Information);
-                    output += string.Format("<td>{0}</td>", s.Address);
-                    output += string.Format("<td>{0}/{1}</td>", s.Players, s.MaxPlayers);
-                    output += string.Format("<td>{0}</td>", s.Version);
-                    output += string.Format("<td>{0}</td>", s.Pingms);
-                    output += string.Format("<td><a href=\"Server?server={0}\">Info</a></td>", s.Address);
-                    output += "</tr>";
-                    WriteLiteral(output);
-                }
-                else
-                {
-                    string output = "<tr id=\"outdatedServer\">";
-                    output += string.Format("<td>{0}</td>", s.Information);
-                    output += string.Format("<td>{0}</td>", s.Address);
-                    output += string.Format("<td>{0}/{1}</td>", s.Players, s.MaxPlayers);
-                    output += string.Format("<td>{0}</td>", s.Version);
-                    output += string.Format("<td>{0}</td>", s.Pingms);
-                    output += string.Format("<td><a href=\"Server?server={0}\">Info</a></td>", s.Address);
-                    output += "</tr>";
-                    WriteLiteral(output);
-                }
+            <tr class="@(KMP.KMPVersion == s.Version ? "" : "outdatedServer" )" >
+                <td>@s.Information</td>
+                <td>@s.Address</td>
+                <td>@s.Players/@s.MaxPlayers</td>
+                <td>@s.Version</td>
+                <td>@s.Pingms</td>
+                <td><a href="/Server?server=@s.Address">Info</a></td>
+            </tr>
             }
         }
     </tbody>

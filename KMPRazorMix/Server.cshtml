@@ -17,27 +17,24 @@
     @{
         if (server.IsOnline)
         {
-            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>","Address",server.Address));
+            <tr><td>Address</td><td>@server.Address</td></tr>
 
-            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Version", server.Version));
+            <tr><td>Version</td><td>@server.Version</td></tr>
 
-            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Players", server.Players + "/" + server.MaxPlayers));
+            <tr><td>Players</td><td>@server.Players/@server.MaxPlayers</td></tr>
 
             if (server.Players > 0)
             {
-                WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Players", string.Join(", ", server.PlayerNames.Where(s => !string.IsNullOrWhiteSpace(s) ) ) ) );//wow many parentheses
+                <tr><td>Players</td><td>@string.Join(", ", server.PlayerNames)</td></tr>
             }
-            
-            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Whitelisting", server.Whitelisted));
 
-            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "HTTP Port", server.HTTPPort));
+            <tr><td>HTTP Port</td><td><a href="http://@server.IP:@server.HTTPPort">@server.HTTPPort</a></td></tr>
 
+            <tr><td>Whitelisted</td><td>@server.Whitelisted</td></tr>
         }
         else
         {
-            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Address", server.Address));
-            
-            WriteLiteral(string.Format("<tr><td>{0}</td><td>{1}</td></tr>", "Failed with", server.FailedWith));
+            Response.Redirect("/Servers");
         }
     }
 </table>
