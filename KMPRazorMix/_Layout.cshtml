@@ -22,7 +22,7 @@
 </head>
 <body>
     <section id="centralColumn">
-        <section id="header">
+        <header id="header">
             <h1>
                 <a href="/">Kerbal MP</a>
             </h1>
@@ -41,15 +41,15 @@
             <h2>
                 <a href="http://www.github.com/TehGimp/KerbalMultiPlayer">Source</a>
             </h2>
-        </section>
+        </header>
 
         <section id="content">
             @RenderBody()
         </section>
 
-        <section id="footer">
+        <footer id="footer">
             Page generated at @DateTime.Now.ToString("hh:mm tt"), KMP information last updated at @KMP.LastUpdate.ToString("hh:mm tt")@{Write(KMP.CurrentlyUpdating ? ", Information is currently updating." : "."); }
-        </section>
+        </footer>
     </section>
 </body>
 </html>
