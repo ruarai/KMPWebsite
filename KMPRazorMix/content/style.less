@@ -92,7 +92,6 @@ body
     border: 1px solid #000;
     border-radius: 1em;
     margin: 2em;
-    width: 100%;
 }
 
 #downloads
@@ -113,6 +112,16 @@ body
     {
         box-shadow: @shadow;
     }
+
+@media screen and (max-width: 1290px)
+{
+
+    #downloads img
+    {
+        height:64px;
+        width:200px;
+    }
+}
 
 .outdatedServer
 {

@@ -54,7 +54,6 @@ body {
   border: 1px solid #000;
   border-radius: 1em;
   margin: 2em;
-  width: 100%;
 }
 #downloads {
   list-style: none;
@@ -68,6 +67,12 @@ body {
 }
 #downloads img {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+@media screen and (max-width: 1290px) {
+  #downloads img {
+    height: 64px;
+    width: 200px;
+  }
 }
 .outdatedServer {
   color: grey;
@@ -89,11 +94,6 @@ body {
 #servers td {
   padding-right: 1em;
   padding-bottom: 0.15em;
-}
-@media screen and (max-width: 900px) {
-  #servers td {
-    padding-bottom: 1em;
-  }
 }
 #servers thead {
   font-size: large;
