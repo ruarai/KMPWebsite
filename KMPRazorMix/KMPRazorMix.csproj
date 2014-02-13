@@ -102,7 +102,6 @@
     <Content Include="backend\Updater.ashx" />
     <Content Include="blank_template\Template.cshtml" />
     <Content Include="Servers.cshtml" />
-    <Content Include="Readme.cshtml" />
     <Content Include="content\style.less">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

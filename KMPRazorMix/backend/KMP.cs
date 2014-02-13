@@ -10,10 +10,9 @@ namespace KMPRazorMix
 {
     public class KMP
     {
-        public const string DataSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpinfo";
-        public const string ChangelogSource = "http://raw.github.com/ruarai/kmpinfo/master/changelog";
-        public const string ReadmeSource = "http://raw.github.com/TehGimp/KerbalMultiPlayer/master/README.md";
-        public const string ServersSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpservers";
+        private const string DataSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpinfo";
+        private const string ChangelogSource = "http://raw.github.com/ruarai/kmpinfo/master/changelog";
+        private const string ServersSource = "http://raw.github.com/ruarai/kmpinfo/master/kmpservers";
 
         public static string KMPVersion;
         public static string KSPCompatibleVersion;
@@ -23,7 +22,6 @@ namespace KMPRazorMix
 
         public static string Changelog;
         public static string ChangelogSummary;
-        public static string Readme;
 
 
         public static List<Server> Servers = new List<Server>(); 
@@ -69,7 +67,6 @@ namespace KMPRazorMix
 
             var markDown = new Markdown();
             Changelog = markDown.Transform(retriever.DownloadString(ChangelogSource));
-            Readme = markDown.Transform(retriever.DownloadString(ReadmeSource));
 
 
             string serverDownload = retriever.DownloadString(ServersSource);
