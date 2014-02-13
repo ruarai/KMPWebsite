@@ -10,6 +10,14 @@ body
     margin: 0 auto;
 }
 
+@media screen and (max-width: 900px)
+{
+    body
+    {
+        width: 100%;
+    }
+}
+
 ::-moz-selection
 {
     background-color: bisque;
@@ -30,13 +38,13 @@ body
     #header h1
     {
         display: inline;
-        font-size:1.5em;
+        font-size: 1.5em;
     }
 
     #header h2
     {
         padding-left: 1em;
-        display:inline;
+        display: inline;
     }
 
     #header a
@@ -49,6 +57,12 @@ body
         {
             color: inherit;
         }
+
+    #header img
+    {
+        top: 4px;
+        position: relative;
+    }
 
 #footer
 {
@@ -130,7 +144,7 @@ body
 #servers td
 {
     padding-right: 1em;
-    padding-bottom:0.15em;
+    padding-bottom: 0.15em;
 }
 
 #servers thead
