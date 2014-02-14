@@ -87,6 +87,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="backend\API\Server.ashx.cs">
+      <DependentUpon>Server.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="backend\API\ServerList.ashx.cs">
+      <DependentUpon>ServerList.ashx</DependentUpon>
+    </Compile>
     <Compile Include="backend\KMP.cs" />
     <Compile Include="backend\Server.cs" />
     <Compile Include="backend\Updater.ashx.cs">
@@ -109,6 +115,8 @@
     <Content Include="FAQ.cshtml" />
     <Content Include="Server.cshtml" />
     <Content Include="Error.cshtml" />
+    <Content Include="backend\API\ServerList.ashx" />
+    <Content Include="backend\API\Server.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

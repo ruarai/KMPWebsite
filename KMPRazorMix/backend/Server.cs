@@ -38,8 +38,6 @@ namespace KMPRazorMix
 
 
         public bool IsOnline;
-        public string FailedWith;
-        public long Pingms = 2500;
 
         public string Address
         {
@@ -59,17 +57,6 @@ namespace KMPRazorMix
         {
             try
             {
-                try
-                {
-                    var pinger = new Ping();
-                    var ping = pinger.Send(IP, 2500);
-
-                    Pingms = ping.RoundtripTime;
-                }
-                catch
-                {
-                    Pingms = 2500;
-                }
 
                 var retriever = new WebClient();
                 var infoPage = retriever.DownloadString("http://" + IP + ":" + HTTPPort).Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
@@ -107,7 +94,6 @@ namespace KMPRazorMix
             }
             catch (Exception e)
             {
-                FailedWith = e.ToString();
                 IsOnline = false;
             }
         }
