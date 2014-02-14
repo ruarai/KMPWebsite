@@ -72,6 +72,7 @@ namespace KMPRazorMix
             string serverDownload = retriever.DownloadString(ServersSource);
             Servers.Clear();
             var servers = serverDownload.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None);
+            lock (Servers)
             foreach (var server in servers)
             {
                 try
@@ -91,6 +92,7 @@ namespace KMPRazorMix
 
         public static void RefreshServers(object state)
         {
+            lock(Servers)
             foreach (var server in Servers)
             {
                 try
