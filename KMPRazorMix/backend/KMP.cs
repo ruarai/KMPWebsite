@@ -79,7 +79,7 @@ namespace KMPRazorMix
                 {
                     var split = server.Split(':');
                     var serverK = new Server(split[0], int.Parse(split[1]));
-                    serverK.UpdateServer();
+                    serverK.FirstUpdate();
                     Servers.Add(serverK);
                 }
                 catch { Debug.WriteLine("Failed to add/update server.");}
@@ -97,7 +97,7 @@ namespace KMPRazorMix
             {
                 try
                 {
-                    server.UpdateServer();
+                    server.Update();
                 }
                 catch { Debug.WriteLine("Failed to refresh server."); }
 

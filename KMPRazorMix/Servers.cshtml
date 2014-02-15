@@ -26,10 +26,11 @@
             foreach (var s in KMP.Servers.Where(s => s.IsOnline))
             {
             <tr class="@(KMP.KMPVersion == s.Version ? "" : "outdatedServer" )" >
-                <td>@s.Information</td>
+                <td>@s.Name</td>
                 <td>@s.Address</td>
                 <td>@s.Players/@s.MaxPlayers</td>
                 <td>@s.Version</td>
+                <td><img src="/content/flags/@{ WriteLiteral(s.Country); }.png" /></td>
                 <td><a href="/Server?server=@s.Address">Info</a></td>
             </tr>
             }

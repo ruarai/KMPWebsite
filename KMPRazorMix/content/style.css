@@ -104,3 +104,6 @@ body {
   height: auto !important;
   margin-bottom: 3em;
 }
+#map {
+  height: 60vh;
+}
