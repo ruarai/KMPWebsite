@@ -30,7 +30,7 @@
                 <td>@s.Address</td>
                 <td>@s.Players/@s.MaxPlayers</td>
                 <td>@s.Version</td>
-                <td><img src="/content/flags/@{ WriteLiteral(s.Country); }.png"/></td>
+                <td><img src="/content/flags/@{ WriteLiteral(s.Country); }.png"/> @s.Region</td>
                 <td><a href="/Server?server=@s.Address">Info</a></td>
             </tr>
             }

@@ -46,6 +46,7 @@ namespace KMPRazorMix
         public string Country;
         public double Latitude;
         public double Longitude;
+        public string Region;
 
         public string Address
         {
@@ -108,7 +109,7 @@ namespace KMPRazorMix
 
                 IsOnline = true;
             }
-            catch (Exception e)
+            catch
             {
                 IsOnline = false;
             }
@@ -129,6 +130,7 @@ namespace KMPRazorMix
                 Country = deserialized.country_code;
                 Latitude = deserialized.latitude;
                 Longitude = deserialized.longitude;
+                Region = deserialized.region_code;
             }
             catch (Exception)
             {

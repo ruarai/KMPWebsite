@@ -8,6 +8,7 @@ namespace KMPRazorMix
     public class GeoData
     {
         public string country_code;
+        public string region_code;
 
         public double latitude;
         public double longitude;
