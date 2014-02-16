@@ -85,7 +85,7 @@ namespace KMPRazorMix
                 catch { Debug.WriteLine("Failed to add/update server.");}
 
             }
-            Servers = Servers.OrderBy(s => s.Players).Reverse().ToList();
+            Servers = Servers.OrderByDescending(s => s.Players).ToList();
             CurrentlyUpdating = false;
             updateThread.Abort();
         }
