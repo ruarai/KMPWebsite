@@ -18,7 +18,7 @@ namespace KMPRazorMix
         }
 
         public string Host;
-        public int Port;
+        public string Port;
         public int HTTPPort;
 
         public int Players;
@@ -58,7 +58,7 @@ namespace KMPRazorMix
             {
                 var split = value.Split(':');
                 Host = split[0];
-                Port = int.Parse(split[1]);
+                Port = split[1];
             }
         }
         public void FirstUpdate()
@@ -77,7 +77,7 @@ namespace KMPRazorMix
 
                 Version = infoPage[0].Replace("Version: ", "");
 
-                Port = int.Parse(infoPage[1].Replace("Port: ", ""));
+                Port = infoPage[1].Replace("Port: ", "");
 
                 var players = infoPage[2].Replace("Num Players: ", "").Split('/');
                 Players = int.Parse(players[0]);
