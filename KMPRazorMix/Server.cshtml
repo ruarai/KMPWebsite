@@ -27,7 +27,7 @@
     }).addTo(map);
 
     L.marker([@server.Latitude, @server.Longitude]).addTo(map);
-    
+
     // disable drag and zoom handlers
     map.dragging.disable();
     map.touchZoom.disable();
@@ -37,48 +37,53 @@
     if (map.tap) map.tap.disable();
 </script>
 
-<table>
-    @{
-        if (server.IsOnline)
-        {
-        <tr>
-            <td>Address</td>
-            <td>@server.Address</td>
-        </tr>
-
-        <tr>
-            <td>Version</td>
-            <td>@server.Version</td>
-        </tr>
-
-        <tr>
-            <td>Players</td>
-            <td>@server.Players/@server.MaxPlayers</td>
-        </tr>
-
-            if (server.Players > 0)
+<div id="leftColumn">
+    <table id="serverInfo">
+        @{
+            if (server.IsOnline)
             {
-        <tr>
-            <td>Players</td>
-            <td>@string.Join(", ", server.PlayerNames)</td>
-        </tr>
+            <tr>
+                <td>Address</td>
+                <td>@server.Address</td>
+            </tr>
+
+            <tr>
+                <td>Version</td>
+                <td>@server.Version</td>
+            </tr>
+
+            <tr>
+                <td>Players</td>
+                <td>@server.Players/@server.MaxPlayers</td>
+            </tr>
+
+                if (server.Players > 0)
+                {
+            <tr>
+                <td>Players</td>
+                <td>@string.Join(", ", server.PlayerNames)</td>
+            </tr>
+                }
+
+            <tr>
+                <td>HTTP Port</td>
+                <td><a href="http://@server.Host:@server.HTTPPort">@server.HTTPPort</a></td>
+            </tr>
+
+            <tr>
+                <td>Whitelisted</td>
+                <td>@server.Whitelisted</td>
+            </tr>
             }
-
-        <tr>
-            <td>HTTP Port</td>
-            <td><a href="http://@server.Host:@server.HTTPPort">@server.HTTPPort</a></td>
-        </tr>
-
-        <tr>
-            <td>Whitelisted</td>
-            <td>@server.Whitelisted</td>
-        </tr>
+            else
+            {
+                Response.Redirect("/Servers");
+            }
         }
-        else
-        {
-            Response.Redirect("/Servers");
-        }
-    }
-</table>
+    </table>
+</div>
 
 
+<div id="rightColumn">
+    API Page: <input value="@Request.Url.Host/backend/API/Server.ashx?host=@server.Address"/>
+</div>
