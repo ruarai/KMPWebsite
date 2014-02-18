@@ -23,6 +23,9 @@ namespace KMPRazorMix
         public static string Changelog;
         public static string ChangelogSummary;
 
+        public static string DebugString;
+
+
 
         public static List<Server> Servers = new List<Server>(); 
 
@@ -53,6 +56,9 @@ namespace KMPRazorMix
         {
             CurrentlyUpdating = true;
             LastUpdate = DateTime.Now;
+
+            Debug.WriteLine("Debug: " + DB.GetDebug());
+            DebugString = DB.GetDebug();
 
             var retriever = new WebClient();
 
@@ -86,6 +92,9 @@ namespace KMPRazorMix
 
             }
             Servers = Servers.OrderByDescending(s => s.Players).ToList();
+
+
+
             CurrentlyUpdating = false;
             updateThread.Abort();
         }

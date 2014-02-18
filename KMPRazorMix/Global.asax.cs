@@ -8,6 +8,7 @@ namespace KMPRazorMix
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            DB.Init();
             KMP.InitialUpdate();
         }
 
